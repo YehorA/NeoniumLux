@@ -1,0 +1,17 @@
+.featured-products-section {
+  text-align: center;
+  border-bottom: 1px solid #fff;
+  padding: 6rem 0;
+
+  h2 {
+    font-size: 3.2rem;
+    color: #ff1493;
+    margin-bottom: 2rem;
+  }
+
+  .featured-products-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}

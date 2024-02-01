@@ -69,6 +69,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
+///////////////////////////
+COLORS
+///////////////////////////
+
 Option 3: Nightlife Vibes Palette
 
     Midnight Blue: #191970
@@ -76,3 +80,12 @@ Option 3: Nightlife Vibes Palette
     Teal: #008080
     Royal Purple: #800080
     Golden Yellow: #FFD700
+
+///////////////////////////
+Slogan
+///////////////////////////
+
+Neonium Lux: Where Light Becomes Art
+
+///////////////////////////
+///////////////////////////

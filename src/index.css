@@ -1,25 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap");
+
 body {
-  background-color: #191970; /* Midnight Blue */
-  color: #008080; /* Teal */
+  background-color: #191970;
+}
+
+html {
+  font-size: 10px;
+}
+
+* {
+  font-family: "Orbitron", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 h1,
 h2,
 h3 {
-  color: #ff1493; /* Deep Pink */
+  color: #ff1493;
 }
 
 a {
-  color: #ffd700; /* Golden Yellow */
+  color: #ffd700;
 }
 
-/* Example of using accent color for borders or highlights */
 .border-highlight {
-  border: 2px solid #800080; /* Royal Purple */
-}
-
-/* Example of using accent color for buttons */
-.button {
-  background-color: #ffd700; /* Golden Yellow */
-  color: #191970; /* Midnight Blue */
+  border: 2px solid #800080;
 }

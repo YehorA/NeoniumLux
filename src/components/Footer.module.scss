@@ -1,0 +1,42 @@
+.footer {
+  background-color: #008080;
+  color: #fff;
+  padding: 4rem 8rem;
+  text-align: center;
+
+  p {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .heading-footer {
+    color: #ffd700;
+  }
+
+  .footerContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .footerInfo {
+      text-align: left;
+      max-width: 400px;
+    }
+  }
+
+  .social-media-links {
+    margin-top: 1rem;
+
+    a {
+      margin-right: 1rem;
+      font-size: 3rem;
+      color: #fff;
+      transition: all 0.3s;
+
+      &:hover {
+        color: #ffd700;
+      }
+    }
+  }
+}
