@@ -1,0 +1,58 @@
+@import "../variables";
+@import "../mixins.scss";
+
+.status {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.4rem;
+  z-index: 10000;
+
+  @include respond-to(md) {
+    left: 50%;
+    top: 1rem !important;
+    width: 60%;
+    transform: translate(-50%, 0);
+  }
+
+  .statusSuccess,
+  .statusError {
+    position: relative;
+    padding: 0.5rem;
+    padding-bottom: 1rem;
+    border-radius: 5px;
+  }
+
+  .statusSuccess {
+    background-color: $secondary-color;
+    color: $secondary-text-color;
+  }
+
+  .statusError {
+    background-color: $accent-primary;
+  }
+
+  .timer {
+    height: 0.5rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: $secondary-text-color;
+    overflow: hidden;
+    box-shadow: 0 0 10px 5px rgba(#fff, 0.2);
+  }
+
+  .timerBackground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0.5rem;
+    width: 100%;
+    background-color: darken($secondary-text-color, 20%);
+    border-radius: 0 0 5px 5px;
+  }
+}
+
+.underNavBar {
+  top: 7rem;
+}

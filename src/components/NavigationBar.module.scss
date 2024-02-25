@@ -1,9 +1,11 @@
+@import "../variables";
+@import "../mixins.scss";
+
 .nav-bar {
   background-color: rgba(0, 128, 128, 0.9);
-  color: #fff;
+  color: $secondary-text-color;
   padding: 1rem 0;
   position: fixed;
-  top: -100%;
   left: 0;
   width: 100%;
   z-index: 1000;
@@ -15,13 +17,14 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 1rem;
+    flex-direction: row;
 
     a {
-      color: #fff;
+      color: $secondary-text-color;
       transition: all 0.3s;
 
       &:hover {
-        color: #ffd700;
+        color: $accent-primary;
       }
     }
 
@@ -53,8 +56,150 @@
       margin-right: 2rem;
 
       .cart-icon {
-        a {
+        position: relative;
+
+        button {
+          color: $secondary-text-color;
           font-size: 2rem;
+          border: none;
+          background-color: transparent;
+          transition: all 0.3s;
+
+          &:hover {
+            cursor: pointer;
+            color: $accent-primary;
+          }
+        }
+
+        ::after {
+          content: attr(
+            data-cart-count
+          ); // Display the content of data-cart-count attribute
+          position: absolute;
+          bottom: -0.5rem;
+          left: -0.5rem;
+          border-radius: 50%;
+          background-color: $accent-primary;
+          color: #1c1c1c;
+          width: 1.5rem;
+          height: 1.5rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@include respond-to(md) {
+  .cross-container {
+    position: fixed;
+    top: 1.5rem;
+    left: 1rem;
+    z-index: 2001; // Higher than nav-bar
+    cursor: pointer;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+
+    &:hover {
+      .lines {
+        background-color: $accent-primary;
+      }
+    }
+
+    .lines {
+      width: 2.5rem;
+      height: 0.3rem;
+      background-color: #fff;
+      position: relative;
+      transition: all 0.3s;
+
+      &:before,
+      &:after {
+        content: "";
+        width: 2.5rem;
+        height: 0.3rem;
+        background-color: inherit;
+        position: absolute;
+      }
+
+      &:before {
+        top: 0.8rem;
+      }
+
+      &:after {
+        top: 1.6rem;
+      }
+    }
+
+    .cross {
+      transform: rotate(45deg);
+      top: 0.5rem;
+
+      &:before {
+        display: none;
+      }
+
+      &:after {
+        top: 0;
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  //Applies when site is smaller then md and turn off visible by appling top:0
+  .visibleLeft {
+    top: 0 !important;
+    left: 0;
+  }
+
+  .invisibleLeft {
+    top: 0 !important;
+    left: -100%;
+  }
+
+  .nav-bar {
+    width: 45%;
+    border-bottom: none;
+    border-right: 1px solid #fff;
+    height: 100vh;
+    transition: left 0.3s ease-in-out;
+    z-index: 2000;
+
+    .nav-content {
+      justify-content: center;
+      text-align: center;
+
+      .left-content {
+        flex-direction: column;
+        gap: 5rem;
+
+        .logo {
+          margin-left: 6rem;
+        }
+
+        .shop,
+        .create-your-own {
+          a {
+            font-size: 1.8rem;
+          }
+        }
+      }
+
+      .right-content {
+        // display: none;
+
+        .cart-icon {
+          display: block;
+          position: fixed;
+          right: 2rem;
+          top: 2rem;
         }
       }
     }
@@ -63,4 +208,26 @@
 
 .visible {
   top: 0;
+}
+
+.invisible {
+  top: -100%;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  z-index: 1500;
+}
+
+.overlayOpen {
+  opacity: 1;
+  pointer-events: auto;
 }

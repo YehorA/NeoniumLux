@@ -1,0 +1,17 @@
+@import "../../variables";
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.6rem;
+
+  input {
+    padding: 0.8rem;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    background-color: $secondary-color;
+    color: $accent-primary;
+  }
+}

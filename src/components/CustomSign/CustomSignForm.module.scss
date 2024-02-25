@@ -1,0 +1,104 @@
+@import "../../variables";
+@import "../../mixins.scss";
+
+.customSign {
+  margin-bottom: 4rem;
+  margin-top: 8rem;
+  padding: 4rem;
+  background-color: $primary-color;
+  color: $secondary-text-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid #fff;
+
+  h1 {
+    color: $accent-primary;
+    margin-bottom: 2rem;
+    font-size: 2.6rem;
+
+    @include respond-to(md) {
+      font-size: 2rem;
+    }
+  }
+
+  form {
+    width: 100%;
+    max-width: 60rem;
+    display: flex;
+    flex-direction: column;
+
+    label {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    input,
+    textarea {
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      background-color: $secondary-color;
+      color: $secondary-text-color;
+    }
+
+    textarea {
+      height: 15rem;
+    }
+
+    button {
+      padding: 0.8rem 1.2rem;
+      font-size: 1.2rem;
+      background-color: $accent-primary;
+      color: #111;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-size: 1.8rem;
+
+      &:hover {
+        background-color: darken($accent-primary, 10%);
+      }
+    }
+
+    .imagePreviewContainer {
+      position: relative;
+      margin-bottom: 1.5rem;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .imagePreview {
+      max-width: 100%;
+      max-height: 25rem;
+      border-radius: 8px;
+    }
+
+    .deleteButton {
+      position: absolute;
+      top: 0.8rem;
+      right: 0.8rem;
+      font-size: 1.8rem;
+      background-color: $accent-primary;
+      color: #111;
+      border: none;
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      @include respond-to(sm) {
+        font-size: 1.2rem;
+      }
+
+      &:hover {
+        background-color: darken($accent-primary, 10%);
+      }
+    }
+  }
+}

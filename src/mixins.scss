@@ -1,0 +1,18 @@
+$breakpoints: (
+  sm: 526px,
+  //Phone Portrait
+  md: 768px,
+  //Tablets, Phone Landscape
+  lg: 992px,
+  //Tablets Lanscape, Netbooks
+  lg-1: 1200px,
+
+  xl: 1420px,
+  //Laptops and other
+);
+
+@mixin respond-to($breakpoint) {
+  @media (max-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}

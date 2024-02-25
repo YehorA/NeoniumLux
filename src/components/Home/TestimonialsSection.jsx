@@ -1,5 +1,3 @@
-// TestimonialsSection.js
-
 import React from "react";
 import styles from "./TestimonialsSection.module.scss";
 import personPhoto1 from "../../assets/images/testimonials-face-1.jpg";

@@ -1,0 +1,175 @@
+@import "../variables";
+
+.cart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 80%;
+  max-width: 40rem;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(100%);
+  border-left: 1px solid #fff;
+  z-index: 2000;
+
+  &.open {
+    transform: translateX(0%);
+  }
+
+  &Content {
+    padding: 2rem;
+    height: 100%;
+    overflow-y: auto;
+    background-color: $secondary-color;
+
+    h2 {
+      font-size: 2.2rem;
+    }
+  }
+
+  &Navigation {
+    background-color: $primary-color;
+
+    display: flex;
+    position: fixed;
+    z-index: 3000;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 6rem;
+    border-bottom: 1px solid #fff;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+      margin-left: 2rem;
+
+      span {
+        color: $secondary-text-color;
+      }
+    }
+
+    .closeButton {
+      margin-right: 2rem;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      i {
+        color: $secondary-text-color;
+        font-size: 2.6rem;
+        transition: all 0.3s;
+
+        &:hover {
+          color: $accent-primary;
+        }
+      }
+    }
+  }
+
+  .productList {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+    margin-top: 5rem;
+    margin-bottom: 8rem;
+  }
+
+  .productItem {
+    display: flex;
+    background-color: $primary-color;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    height: 15rem;
+    position: relative;
+    border: 1px solid #ccc;
+    text-decoration: none;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+
+    img {
+      width: 15rem;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 5px;
+      margin-right: 1rem;
+    }
+
+    .productInfo {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 1;
+
+      h3 {
+        margin: 0;
+        font-size: 1.4rem;
+        color: $primary-text-color;
+        text-decoration: none;
+      }
+
+      p {
+        margin: 0.5rem 0 0;
+        font-size: 1rem;
+        color: $secondary-text-color;
+        text-decoration: none;
+      }
+
+      .quantity {
+        font-size: 0.9rem;
+        color: $secondary-text-color;
+      }
+    }
+
+    .removeButton {
+      background-color: transparent;
+      border: none;
+      position: absolute;
+      right: 1rem;
+      bottom: 1rem;
+      color: $secondary-text-color;
+      transition: all 0.3s;
+
+      &:hover {
+        color: $primary-text-color;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .cartPayComponent {
+    background-color: $primary-color;
+    position: fixed;
+    display: flex;
+    z-index: 3000;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 6rem;
+    border-top: 1px solid #fff;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+    .payButton {
+      color: $secondary-text-color;
+      font-size: 1.8rem;
+      transition: all 0.3s;
+      height: 4rem;
+      background-color: $primary-color;
+      padding: 1rem;
+      border-radius: 5px;
+
+      &:hover {
+        cursor: pointer;
+        background-color: darken($primary-color, 4%);
+        box-shadow: 0 0 5px 3px rgba(#fff, 0.1);
+      }
+    }
+  }
+}

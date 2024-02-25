@@ -1,4 +1,6 @@
+@import "../../variables";
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import "../../mixins.scss";
 
 .hero-section {
   position: relative;
@@ -36,20 +38,20 @@
       font-size: 5rem;
       font-weight: bold;
       margin-bottom: 2rem;
-      text-shadow: 0 0 10px #ff1493;
+      text-shadow: 0 0 10px $primary-text-color;
     }
 
     .hero-subheading {
       font-size: 2.2rem;
       margin-bottom: 6rem;
-      color: #ffd700;
+      color: $accent-primary;
       text-shadow: 2px 2px 4px rgba(255, 215, 0, 0.8);
     }
 
     .hero-button {
       // background-color: #ff1493;
       background-color: rgba(0, 0, 0, 0.4);
-      color: #fff;
+      color: $secondary-text-color;
       padding: 1.5rem 3rem;
       font-size: 1.8rem;
       border: none;
@@ -63,8 +65,8 @@
         // background-color: darken(#ff1493, 10%);
         background-color: rgba(0, 0, 0, 0.6);
         box-shadow: 0 0 2rem rgba(255, 20, 147, 1);
-        color: #ff1493;
-        border: 3px solid #ff1493;
+        color: $primary-text-color;
+        border: 3px solid $primary-text-color;
         letter-spacing: 0.1em;
       }
     }
@@ -73,11 +75,11 @@
   .scroll-down-indicator {
     z-index: 2;
     position: absolute;
-    bottom: 20px;
+    bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);
     font-size: 3.2rem;
-    color: #ffd700;
+    color: $accent-primary;
     animation: glow 1s infinite alternate, all 0.3s ease-in-out;
 
     @keyframes glow {
@@ -90,7 +92,38 @@
     }
   }
 
-  // &:hover .hero-content {
-  //   transform: translate(-50%, -40%);
-  // }
+  @include respond-to(sm) {
+    .hero-content {
+      .hero-heading {
+        font-size: 4rem;
+      }
+
+      .hero-subheading {
+        font-size: 1.8rem;
+        margin-bottom: 3rem;
+      }
+
+      .hero-button {
+        font-size: 1.4rem;
+
+        &:hover {
+          letter-spacing: 0;
+        }
+      }
+    }
+
+    .scroll-down-indicator {
+      font-size: 2.5rem;
+    }
+  }
+
+  @include respond-to(sm) {
+    .hero-content {
+      .hero-button {
+        &:hover {
+          letter-spacing: 0;
+        }
+      }
+    }
+  }
 }

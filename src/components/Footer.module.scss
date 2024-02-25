@@ -1,8 +1,12 @@
+@import "../variables";
+@import "../mixins.scss";
+
 .footer {
-  background-color: #008080;
-  color: #fff;
+  background-color: $secondary-color;
+  color: $secondary-text-color;
   padding: 4rem 8rem;
   text-align: center;
+  border-top: 1px solid #fff;
 
   p {
     font-size: 1.4rem;
@@ -10,7 +14,7 @@
   }
 
   .heading-footer {
-    color: #ffd700;
+    color: $accent-primary;
   }
 
   .footerContent {
@@ -21,7 +25,11 @@
 
     .footerInfo {
       text-align: left;
-      max-width: 400px;
+      max-width: 40rem;
+
+      @include respond-to(md) {
+        margin-top: 2rem;
+      }
     }
   }
 
@@ -31,11 +39,11 @@
     a {
       margin-right: 1rem;
       font-size: 3rem;
-      color: #fff;
+      color: $secondary-text-color;
       transition: all 0.3s;
 
       &:hover {
-        color: #ffd700;
+        color: $accent-primary;
       }
     }
   }

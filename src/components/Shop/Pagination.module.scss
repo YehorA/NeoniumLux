@@ -1,0 +1,36 @@
+@import "../../variables";
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+
+  button {
+    background-color: $secondary-color;
+    color: $accent-primary;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0 0.2rem;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 4rem;
+
+    &.active {
+      background-color: $accent-primary;
+      color: $secondary-color;
+    }
+
+    i {
+      font-size: 1.2rem;
+    }
+  }
+
+  .ellipsis {
+    display: flex;
+    justify-content: center;
+    color: $secondary-color;
+    font-size: 2.2rem;
+    width: 4.2rem;
+  }
+}

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./HeroSection.module.scss";
 
 function HeroSection() {
@@ -9,7 +10,9 @@ function HeroSection() {
           Explore the fusion of imagination and skill at NeonLux, where we
           present an enchanting collection of captivating neon artworks.
         </p>
-        <button className={styles["hero-button"]}>Start shopping now!</button>
+        <Link to="/shop">
+          <button className={styles["hero-button"]}>Start shopping now!</button>
+        </Link>
       </div>
       <i
         className={`fa-solid fa-arrow-down ${styles["scroll-down-indicator"]}`}></i>

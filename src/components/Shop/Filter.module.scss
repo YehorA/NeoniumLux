@@ -1,0 +1,49 @@
+@import "../../variables";
+@import "../../mixins.scss";
+
+.filter {
+  margin-bottom: 2rem;
+  margin-right: 2rem;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 4px;
+
+  .select {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1.6rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: $primary-color;
+    color: white;
+
+    @include respond-to(lg) {
+      width: 40%;
+      margin-bottom: 2rem;
+    }
+
+    @include respond-to(md) {
+      width: 60%;
+    }
+
+    @include respond-to(sm) {
+      width: 80%;
+    }
+  }
+
+  .priceSlider {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: $secondary-text-color;
+
+    @include respond-to(lg) {
+      margin-bottom: 2rem;
+    }
+
+    label {
+      display: block;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+}

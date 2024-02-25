@@ -1,0 +1,21 @@
+@import "../mixins.scss";
+
+.productPage {
+  display: flex;
+  margin: 10rem 2rem 4rem 15%;
+
+  @include respond-to(lg) {
+    flex-direction: column;
+    margin: 10rem 6rem 4rem 6rem;
+  }
+
+  .mainContent {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+
+    @include respond-to(lg) {
+      width: 100%;
+    }
+  }
+}

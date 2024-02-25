@@ -1,15 +1,20 @@
-// TestimonialsSection.module.scss
+@import "../../variables";
+@import "../../mixins.scss";
 
 .testimonials-section {
   text-align: center;
   padding: 8rem 0;
-  color: #fff;
+  color: $secondary-text-color;
   border-bottom: 1px solid #fff;
-  background: linear-gradient(45deg, #191970, rgba(0, 128, 128, 0.5));
+  background: linear-gradient(45deg, $primary-color, rgba($primary-color, 0.5));
 
   h2 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 5rem;
+
+    @include respond-to(lg) {
+      font-size: 2rem;
+    }
   }
 
   .testimonials-list {
@@ -27,9 +32,18 @@
       .testimonial-container {
         display: flex;
         gap: 1rem;
-        background-color: #191970;
-        border: 2px solid #008080;
+        background-color: $primary-color;
+        border: 2px solid $secondary-color;
         border-radius: 8px;
+
+        @include respond-to(md) {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        @include respond-to(sm) {
+          width: 80%;
+        }
 
         .testimonial-text {
           padding: 2rem;
@@ -37,6 +51,10 @@
           display: flex;
           flex-direction: column;
           justify-content: center;
+
+          @include respond-to(sm) {
+            width: 80%;
+          }
 
           p {
             font-size: 1.6rem;
@@ -50,7 +68,7 @@
             justify-content: center;
 
             i {
-              color: #ffd700;
+              color: $accent-primary;
               font-size: 1.5rem;
             }
           }
@@ -62,7 +80,7 @@
           padding: 2rem;
 
           img {
-            border: 3px solid #008080;
+            border: 3px solid $secondary-color;
             width: 10rem;
             height: 10rem;
             overflow: hidden;
@@ -73,7 +91,7 @@
           .testimonial-author-text {
             font-size: 1.8rem;
             font-weight: bold;
-            color: #ff1493;
+            color: $primary-text-color;
             margin-top: 1rem;
           }
         }

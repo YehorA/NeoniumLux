@@ -1,10 +1,15 @@
 import React from "react";
-import Home from "./pages/Home";
+import AppRouter from "./AppRouter";
+import Footer from "./components/Footer";
+import { CartProvider } from "./components/CartContext";
 
 function App() {
   return (
-    <div className="App">
-      <Home />
+    <div>
+      <CartProvider>
+        <AppRouter />
+      </CartProvider>
+      <Footer />
     </div>
   );
 }

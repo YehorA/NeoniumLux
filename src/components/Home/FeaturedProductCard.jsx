@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./FeaturedProductCard.module.scss";
+import { CartContext } from "../CartContext";
+import { Link } from "react-router-dom";
 
-function FeaturedProductCard({ product }) {
+function FeaturedProductCard({ product, findProductById }) {
   const { name, price, status, imageUrl } = product;
+  const { addToCart } = useContext(CartContext);
+
+  const handleAddToCart = () => {
+    // Find the corresponding product in the all products database
+    const productFromAllProducts = findProductById(product.id);
+    addToCart(productFromAllProducts);
+  };
 
   return (
     <div className={`${styles["featured-product-card"]} ${styles[status]}`}>
@@ -12,13 +21,14 @@ function FeaturedProductCard({ product }) {
         <p className={styles["featured-product-price"]}>Price: ${price}</p>
 
         <div className={styles["featured-buttons"]}>
-          <button
+          <Link
+            to={`/product/${product.id}`}
             className={`${styles["details-button"]} ${
               status === "new" ? styles["new"] : styles["popular"]
             }`}>
             View details
-          </button>
-          <button className={styles["cart-button"]}>
+          </Link>
+          <button className={styles["cart-button"]} onClick={handleAddToCart}>
             <i className="fas fa-shopping-cart"></i>
           </button>
         </div>
@@ -28,16 +38,3 @@ function FeaturedProductCard({ product }) {
 }
 
 export default FeaturedProductCard;
-
-// {status === "popular" && (
-//           <div
-//             className={`${styles["featured-product-status"]} ${styles["popular"]}`}>
-//             Popular
-//           </div>
-//         )}
-//         {status === "new" && (
-//           <div
-//             className={`${styles["featured-product-status"]} ${styles["new"]}`}>
-//             New
-//           </div>
-//         )}

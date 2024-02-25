@@ -1,0 +1,64 @@
+@import "../../variables";
+@import "../../mixins.scss";
+
+.customSignGuide {
+  text-align: center;
+  padding: 2rem;
+  margin-bottom: 4rem;
+
+  .stepsContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 14rem;
+
+    @include respond-to(lg-1) {
+      margin: 0 10rem;
+    }
+
+    @include respond-to(lg) {
+      margin: 0 6rem;
+      gap: 2rem;
+    }
+
+    @include respond-to(md) {
+      margin: 0 2rem;
+      gap: 2rem;
+    }
+
+    @include respond-to(sm) {
+      flex-direction: column;
+    }
+
+    .step {
+      flex: 1;
+      margin: 0 6rem;
+      text-align: center;
+
+      @include respond-to(lg) {
+        margin: 0 1rem;
+      }
+
+      @include respond-to(sm) {
+        display: block; /* Change display property to block */
+      }
+
+      i {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: $accent-primary;
+      }
+
+      h2 {
+        margin-bottom: 1rem;
+        color: $primary-text-color;
+        font-size: 1.8rem;
+      }
+
+      p {
+        font-size: 1.2rem;
+        color: $secondary-text-color;
+      }
+    }
+  }
+}

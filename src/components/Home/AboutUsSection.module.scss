@@ -1,17 +1,24 @@
+@import "../../variables";
+@import "../../mixins.scss";
+
 .about-us-section {
-  color: #fff;
+  color: $secondary-text-color;
   padding: 6rem 0;
-  background-color: #191970;
   border-bottom: 1px solid #fff;
 
   .about-us-content {
-    display: flex;
     max-width: 92rem;
     margin: 0 auto;
+
+    @include respond-to(lg) {
+      margin: 0 6rem;
+    }
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 3rem;
 
     .aus-text {
-      flex: 1;
       text-align: left;
     }
 
@@ -19,30 +26,41 @@
       font-size: 2.5rem;
       font-weight: bold;
       margin-bottom: 2.5rem;
-      color: #ff1493;
+      color: $primary-text-color;
+
+      @include respond-to(md) {
+        font-size: 2rem;
+      }
     }
 
     .aus-secondary-heading {
       font-size: 1.8rem;
       font-weight: bold;
-      color: #ff1493;
+      color: $primary-text-color;
       margin-top: 2rem;
       margin-bottom: 1rem;
-    }
 
-    i {
-      color: #ffd700;
-      margin-right: 0.5rem;
+      i {
+        color: $accent-primary;
+        margin-right: 0.5rem;
+      }
+
+      @include respond-to(md) {
+        font-size: 1.6rem;
+      }
     }
 
     .aus-description {
       font-size: 1.6rem;
       line-height: 1.6;
       margin-bottom: 2.5rem;
+
+      @include respond-to(md) {
+        font-size: 1.4rem;
+      }
     }
 
     .aus-image {
-      flex: 1;
       display: flex;
       flex-direction: column;
       gap: 2rem;
