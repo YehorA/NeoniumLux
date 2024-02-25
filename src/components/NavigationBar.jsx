@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import styles from "./NavigationBar.module.scss";
 import logoImage from "../assets/images/logo.png";
 import Cart from "./Cart";
@@ -42,20 +43,24 @@ function NavigationBar({
         <div className={`${styles["nav-content"]} `}>
           <div className={styles["left-content"]}>
             <div className={styles["logo"]}>
-              <a href="/">
+              {/* Replace <a> with <Link> */}
+              <Link to="/">
                 <img src={logoImage} alt="Logo" />
-              </a>
+              </Link>
             </div>
             <div className={styles["shop"]}>
-              <a href="/shop">Shop</a>
+              {/* Replace <a> with <Link> */}
+              <Link to="/shop">Shop</Link>
             </div>
             <div className={styles["create-your-own"]}>
-              <a href="/customSign">Create Your Own Design</a>
+              {/* Replace <a> with <Link> */}
+              <Link to="/customSign">Create Your Own Design</Link>
             </div>
           </div>
           <div className={styles["right-content"]}>
             <div className={styles["cart-icon"]}>
               <button onClick={toggleCart} data-cart-count={cart.length}>
+                {/* You can still use <button> */}
                 <i className="fas fa-shopping-cart"></i>
               </button>
             </div>

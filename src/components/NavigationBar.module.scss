@@ -165,11 +165,11 @@
   }
 
   .nav-bar {
+    transition: left 0.3s ease-in-out;
     width: 45%;
     border-bottom: none;
     border-right: 1px solid #fff;
     height: 100vh;
-    transition: left 0.3s ease-in-out;
     z-index: 2000;
 
     .nav-content {
