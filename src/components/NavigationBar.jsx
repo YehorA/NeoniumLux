@@ -43,24 +43,20 @@ function NavigationBar({
         <div className={`${styles["nav-content"]} `}>
           <div className={styles["left-content"]}>
             <div className={styles["logo"]}>
-              {/* Replace <a> with <Link> */}
               <Link to="/">
                 <img src={logoImage} alt="Logo" />
               </Link>
             </div>
             <div className={styles["shop"]}>
-              {/* Replace <a> with <Link> */}
               <Link to="/shop">Shop</Link>
             </div>
             <div className={styles["create-your-own"]}>
-              {/* Replace <a> with <Link> */}
               <Link to="/customSign">Create Your Own Design</Link>
             </div>
           </div>
           <div className={styles["right-content"]}>
             <div className={styles["cart-icon"]}>
               <button onClick={toggleCart} data-cart-count={cart.length}>
-                {/* You can still use <button> */}
                 <i className="fas fa-shopping-cart"></i>
               </button>
             </div>
