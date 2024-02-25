@@ -19,6 +19,10 @@
     padding: 0 1rem;
     flex-direction: row;
 
+    @include respond-to(sm) {
+      margin-top: 6rem;
+    }
+
     a {
       color: $secondary-text-color;
       transition: all 0.3s;

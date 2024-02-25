@@ -24,6 +24,10 @@
     height: auto;
   }
 
+  @include respond-to(esm) {
+    flex-basis: calc(100% - 2rem);
+  }
+
   &:hover {
     transform: scale(1.05);
     cursor: pointer;
