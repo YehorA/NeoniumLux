@@ -10,10 +10,12 @@ import Shop from "./pages/Shop";
 import ProductDetails from "./pages/ProductDetails";
 import PaymentPage from "./pages/PaymentPage";
 import CustomSign from "./pages/CustomSign";
+import ScrollToTop from "./ScrollToTop";
 
 function AppRouter() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
